@@ -1,0 +1,87 @@
+---
+title: 사람인 웹 접근성 퀴즈
+sidebar_label: 13번 문제
+id: quiz-13
+slug: /quiz/13
+hide_table_of_contents: true
+---
+
+## Q13. 다음 화면에서 저시력 또는 노안을 가진 사용자가 내용을 인식하는데 어려운 부분을 모두 고르세요.
+
+import { ObjectiveQuiz } from "../_util/ObjectiveQuiz.mdx";
+import { Glossary } from "../_util/Glossary.mdx";
+import { Correct } from "../_util/Correct.mdx";
+import { FigureBox } from "../_util/FigureBox.mdx";
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<FigureBox>
+  <img src={useBaseUrl("/img/a11y/quiz-contrast.png")} alt="" />
+</FigureBox>
+
+<ObjectiveQuiz
+  options={[
+    {
+      label: `1`,
+      value: 1,
+    },
+    {
+      label: `2`,
+      value: 2,
+    },
+    {
+      label: `3`,
+      value: 3,
+    },
+    {
+      label: `4`,
+      value: 4,
+    },
+    {
+      label: `5`,
+      value: 5,
+    }
+  ]}
+  answer={[3, 4,5]}
+>
+  <Correct>
+    <p>
+      3. 흰색 배경과 로열 블루에 가까운 텍스트 색상은 4.1 : 1 수준의 명도 대비를 가지며,
+      이 명도 대비는 저시력 사용자가 텍스트를 인식하기 위한 최소 명도 대비 요구사항인 
+      4.5 : 1을 만족하지 못하므로 인식이 어렵게 됩니다.
+    </p>
+    <p>
+      4. 흰색 배경과 회색 텍스트 색상은 3.18: 1 수준의 명도 대비를 가지며, 
+      이 명도 대비는 저시력 사용자가 텍스트를 인식하기 위한 최소 명도 대비 요구사항인 
+      4.5 : 1을 만족하지 못하므로 인식이 어렵게 됩니다.
+    </p>
+    <p>
+      5. 흰색 배경과 버튼 테두리의 색상은 1.37 : 1 수준의 명도 대비를 가지며,
+      이 명도 대비는 저시력 사용자가 컴포넌트를 구별하기 위한 최소 명도 대비 요구사항인 
+      3 : 1을 만족하지 못하므로 버튼의 모양을 인식하기 어렵게 됩니다.
+    </p>
+  </Correct>
+  <p>
+    저시력 사용자의 경우 텍스트를 읽거나 컴포넌트를 구분할 수 있으려면 배경과 텍스트 간,
+    배경과 컴포넌트 간, 컴포넌트와 컴포넌트 간 충분한 명도 대비가 제공되어야 합니다.
+  </p>
+  <p>
+    접근성 가이드에서는 이 구분을 위해 필요한 최소 요건의 명도 대비를 명시하고 있고, 
+    이 명도 대비는 인식에 필요한 최소 값이기 때문에 반드시 이 값 이상으로 제공되어야 합니다.
+  </p>
+  <p>
+    단지 꾸밈 효과를 위해 사용되는 콘텐츠의 경우, 즉 정상 시력을 가진 사람에게도 보여지지 
+    않아도 무관한 (콘텐츠에서 빼도 되는) 콘텐츠는 정보를 인식하는데 필요한 콘텐츠가 아니기 
+    때문에 명도 대비에 대한 요구사항이 없습니다.
+  </p>
+  <p>
+    <a href="https://sri-fe1.notion.site/a13805c62b74442abe8e0e6b8d48abb5">
+    🔎 텍스트와 배경 사이의 명도 대비 자세히 알아보기
+    </a>
+  </p>
+  <p>
+    <a href="https://sri-fe1.notion.site/a70d0cf66d7f48e68307f1749614f65c">
+    🔎 텍스트가 아닌 콘텐츠의 명도 대비 자세히 알아보기
+    </a>
+  </p>
+  
+</ObjectiveQuiz>

@@ -1,0 +1,29 @@
+import { useState } from "react";
+import { uid } from "./Uid.mdx";
+
+export const Checkbox = ({option, setCheckedList}) => {
+  const { label, image, value } = option;
+  const id = uid();
+  const checkHandler = ({target}) => {
+    const checked = target.checked;
+    const value = target.value;
+    setCheckedList({checked, value});
+  };
+  return (
+    <span className="answer__item">
+      <input
+        id={id}
+        type="checkbox"
+        value={value}
+        className="answer__item__checkbox"
+        onChange={(event) => checkHandler(event)}
+      />
+      <label htmlFor={id} className="answer__item__wrapper">
+        <span className="answer__item__label">
+          <span>{ label || `` }</span>
+          { image && (<img src={image} alt="" />) }
+        </span>
+      </label>
+    </span>
+  )
+};

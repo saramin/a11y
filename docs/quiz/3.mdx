@@ -1,0 +1,55 @@
+---
+title: 사람인 웹 접근성 퀴즈
+sidebar_label: 3번 문제
+id: quiz-3
+slug: /quiz/3
+hide_table_of_contents: true
+---
+
+## Q3. 다음 중 웹 접근성의 원칙과 설명이 잘못 짝지어진것을 고르세요.
+
+import { ObjectiveQuiz } from "../_util/ObjectiveQuiz.mdx";
+import { Glossary } from "../_util/Glossary.mdx";
+import { Correct } from "../_util/Correct.mdx";
+
+<ObjectiveQuiz
+  column={1}
+  options={[
+    {
+      label: `인식가능: 사용자가 특정 감각을 사용할 수 없거나 사용자의 약한 감각을 보완하기 위한 대체 접근 방법을 제공해야 한다.`,
+      value: 1,
+    },
+    {
+      label: `조작 가능:  특정 입력 장치로만 조작 가능하거나 입력 장치 사용에의 제약을 보완하기 위한 대체 접근 방법을 제공해야 한다`,
+      value: 2,
+    },
+    {
+      label: `이해 가능: 난독증이나 노화로 인한 이해력 감소는 어쩔 수 없는 부분이기 때문에 이러한 경우는 이해 가능 원칙에서 예외로 둔다.`,
+      value: 3,
+    },
+    {
+      label: `견고성: 사용자가 사용하는 브라우저나 보조 기술에서 모든 정보를 인식하고 작동시킬 수 있도록 표준 기술로 올바르게 설계 및 구현되어야 한다.`,
+      value: 4,
+    }
+  ]}
+  answer={3}
+>
+  <Correct>
+    <p>
+      3. 이해 가능 원칙은 모든 사용자가 능력에 관계없이 웹 콘텐츠의 정보뿐 아니라 원하는
+      정보를 찾기 위한 탐색 방법 및 유저 인터페이스나 기능을 사용하는 방법을 이해할 수 있어야
+      함을 의미합니다.
+    </p>
+  </Correct>
+  <p>
+    접근성에는 Perceivable(인식 가능), Understandable(이해 가능), Operable(조작 가능),
+    Robust(견고성) 4 가지의 상위 수준 원칙이 있고 이를 줄여서 P.O.U.R 원칙이라고 부릅니다.
+  </p>
+  <p>
+    이 원칙은 접근성에서 다루어야 하는 문제들을 기능적으로 설명하고 이 원칙에 따라 접근성
+    지침 표준이 마련되어 있습니다.
+  </p>
+  <a href="https://sri-fe1.notion.site/2-2-P-O-U-R-f2ce2b687dd149d793d544328599bc6b">
+    🔎 더 자세히 알고 싶다면?
+  </a>
+</ObjectiveQuiz>

@@ -1,0 +1,55 @@
+---
+title: 사람인 웹 접근성 퀴즈
+sidebar_label: 15번 문제
+id: quiz-15
+slug: /quiz/15
+hide_table_of_contents: true
+---
+
+## Q15. 데이터 입력에 대한 도움말은 어디에 위치하는 것이 좋을까요?
+
+import { ObjectiveQuiz } from "../_util/ObjectiveQuiz.mdx";
+import { Glossary } from "../_util/Glossary.mdx";
+import { Correct } from "../_util/Correct.mdx";
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<ObjectiveQuiz
+  column={1}
+  options={[
+    {
+      label: `1. 입력 위치 앞에 안내`,
+      image: useBaseUrl(`/img/a11y/quiz-help-01.png`),
+      value: 1,
+    },
+    {
+      label: `2. 입력 위치 뒤에 안내`,
+      image: useBaseUrl(`/img/a11y/quiz-help-02.png`),
+      value: 2,
+    }
+  ]}
+  answer={1}
+>
+  <Correct>
+    <p>
+      2. 각 입력 항목이나 조작에 대해 이해한 이후에 진행 할 수 있도록 
+      도움말은 사용자의 행동이 이루어지기 이전에 제공하는 것이 좋습니다.
+    </p>
+  </Correct>
+  <p>
+    입력 항목에 대한 도움말을 제공할 때에는, 사용자가 수행 중인 작업을 벗어나지 않고 
+    입력을 수행할 수 있도록 돕는 것이 가장 좋습니다.
+  </p>
+  <p>
+    데이터 입력에 대한 도움말을 입력 한 이후에 접근하게 되면 형식을 맞추기 위해 
+    다시 입력해야 한거나, 세부 사항을 모른 채 입력 했다가 다시 다른 행동을 결정해야 할 
+    수 있습니다.
+  </p>
+  <p>
+    위 문제의 2번 보기와 같이 도움말을 입력을 수행 한 이후에야 인식하게 한다면, 
+    해당 내용에 도달하지 못한 사용자는 이메일이 기억나지 못할 경우 입력을 포기하고 
+    이탈하게 되는 상황을 만들게 될 수도 있습니다.
+  </p>
+  <a href="https://sri-fe1.notion.site/1bf608af03be4a9cb973e0696a737b2c">
+    🔎 자세히 알아보기
+  </a>
+</ObjectiveQuiz>

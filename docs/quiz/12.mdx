@@ -1,0 +1,67 @@
+---
+title: 사람인 웹 접근성 퀴즈
+sidebar_label: 12번 문제
+id: quiz-12
+slug: /quiz/12
+hide_table_of_contents: true
+---
+
+## Q12. 다음의 탭 UI에서 "개인회원 탭 버튼" 다음으로 포커스 되어야 하는 것을 고르세요. 
+
+import { ObjectiveQuiz } from "../_util/ObjectiveQuiz.mdx";
+import { Glossary } from "../_util/Glossary.mdx";
+import { Correct } from "../_util/Correct.mdx";
+import { FigureBox } from "../_util/FigureBox.mdx";
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<FigureBox>
+  <img src={useBaseUrl("/img/a11y/quiz-keyboard.png")} alt="" />
+</FigureBox>
+
+
+<ObjectiveQuiz
+  options={[
+    {
+      label: `"기업회원 탭" 버튼`,
+      value: 1,
+    },
+    {
+      label: `"로그인 유지" 체크박스 `,
+      value: 2,
+    },
+    {
+      label: `"아이디 저장" 체크박스`,
+      value: 3,
+    },
+    {
+      label: `"보안" 스위치 버튼`,
+      value: 4,
+    },
+    {
+      label: `"아이디" 입력 박스`,
+      value: 5,
+    }
+  ]}
+  answer={2}
+>
+  <Correct>
+    <p>
+      2. 탭 UI에서 일반적인 읽기 및 포커스 흐름은 활성화 되어 있는 탭 버튼에 먼저 접근 한 뒤, 
+      열려진 탭 패널로 이동 입니다.
+    </p>
+    <p>
+      따라서 "로그인 유지" 체크박스가 다음 포커스 위치가 됩니다.
+    </p>
+  </Correct>
+  <p>
+    페이지를 조작하기 위해 키보드에 의존해야 하는 사용자는 포커스 순서가 논리적이지 않거나 
+    사용 가능한 포커스 순서가 아니면 사용이 어렵습니다
+  </p>
+  <p>
+    일반적으로는 시선의 흐름과 포커스 이동 순서가 일치하지만 위 탭 UI와 같이 콘텐츠의 
+    의미가 일치하는 순서가 보장 되는 것이 매우 중요하므로 논리적 순서가 유지되어야 합니다.
+  </p>
+  <a href="https://sri-fe1.notion.site/f3a9b8997272471392083978e5d9533a">
+    🔎 자세히 알아보기
+  </a>
+</ObjectiveQuiz>

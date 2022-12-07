@@ -1,0 +1,21 @@
+---
+title: 소개
+id: introduction
+slug: /
+---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<div className={`intro__wrapper`}>
+  <img src={useBaseUrl("/img/a11y/saramin.png")} alt={"사람인"} />
+  
+  <div className="intro">
+    사람인HR은 “우리는 사용자 중심으로 생각하고 결정한다”는 우리의 일하는 방법을 따라 모두를
+    위한 웹 서비스 제공의 일환으로 웹 접근성을 준수하는 서비스를 만들기 위해 노력하고 있습니다.
+  
+    여러분은 접근성에 대해 어느 정도 이해하고 계신가요?
+  
+    퀴즈를 통해 접근성에 대한 이해도를 확인해보세요!!
+  </div>
+  
+  <a href={useBaseUrl("/quiz/1")} className="intro__quiz" >퀴즈풀기</a>
+</div>

@@ -1,0 +1,68 @@
+import { useState, useEffect, useRef } from "react";
+
+export const Feedback = ({feedback, answer, children = []}) => {
+  answer = Array.isArray(answer) ? answer : [String(answer)];
+  children = children.length ? children : [children];
+  const isHidden = feedback === null;
+  const Correct = [...children].find(child => child?.props?.mdxType === 'Correct')
+  const Description = Correct ? [...children].splice(1) : children;
+  const Feedback = useRef();
+  (typeof window !== undefined) && useEffect(
+    () => {
+      const observer = new MutationObserver(mutations => {
+        mutations.forEach(({target}) => {
+          target.hidden === false
+          && target.scrollIntoView({behavior: `smooth`, block: `nearest`});
+        });
+      });
+      observer.observe(Feedback.current, { attributes: true });
+      return () => {
+        observer.disconnect(Feedback.current, { attributes: true })
+      };
+    },
+    [],
+  );
+  return (
+    <div ref={Feedback} hidden={isHidden} className="feedback">
+      <h2 className="sr-only">풀이 결과</h2>
+      <div className="feedback__result">
+        {
+          feedback
+          ? (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="240px" height="240px"><path fill="#4caf50" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"/><path fill="#ccff90" d="M34.602,14.602L21,28.199l-5.602-5.598l-2.797,2.797L21,33.801l16.398-16.402L34.602,14.602z"/></svg>)
+          : (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="240px" height="240px"><path fill="#f44336" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"/><path fill="#fff" d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z"/><path fill="#fff" d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z"/></svg>)
+        }
+        {
+          feedback ? "정답입니다!" : "아쉽지만 틀렸어요 ㅠㅠ"
+        }
+      </div>
+      {
+        feedback
+        ? ""
+        : (
+          <p className="feedback__answer">
+            정답은 <strong>{ answer.join(", ") }</strong> 입니다.
+          </p>
+        )
+      }
+      {
+        feedback === false && Correct
+        ? (
+            <div className="feedback__correct">
+              {Correct}
+            </div>
+          )
+        : ""
+      }
+      {
+        Description
+        ? (
+            <div className="feedback__desc">
+              <h3 className="feedback__desc__heading">📢 더 알아보기</h3>
+              {Description}
+            </div>
+          )
+        : ""
+      }
+    </div>
+  )
+};

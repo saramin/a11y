@@ -1,0 +1,60 @@
+---
+title: 사람인 웹 접근성 퀴즈
+sidebar_label: 14번 문제
+id: quiz-14
+slug: /quiz/14
+hide_table_of_contents: true
+---
+
+## Q14. 클릭, 터치 가능한 항목에 필요한 최소 사이즈는 얼마일까요?
+
+import { ObjectiveQuiz } from "../_util/ObjectiveQuiz.mdx";
+import { Glossary } from "../_util/Glossary.mdx";
+import { Correct } from "../_util/Correct.mdx";
+
+<ObjectiveQuiz
+  column={2}
+  options={[
+    {
+      label: `1. 20pt x 20pt`,
+      image: `https://via.placeholder.com/26x26?text=%20`,
+      value: 1,
+    },
+    {
+      label: `2. 20px x 24px`,
+      image: `https://via.placeholder.com/20x24?text=%20`,
+      value: 2,
+    },
+    {
+      label: `3. 24pt x 24pt`,
+      image: `https://via.placeholder.com/32x32?text=%20`,
+      value: 3,
+    },
+    {
+      label: `4. 24px x 24px`,
+      image: `https://via.placeholder.com/24x24?text=%20`,
+      value: 4,
+    }
+  ]}
+  answer={4}
+>
+  <Correct>
+    <p>
+      4. 작은 화면에서 컨트롤을 눌러야 하거나 손떨림이 있는 사용자가 컨트롤을 활성화 하기 
+      위해서 충분한 크기가 제공되어야 하고, 이 크기의 최소 규격을 접근성 지침에서는 24px * 24px로
+      규정하고 있습니다.
+    </p>
+  </Correct>
+  <p>
+    마우스 및 이와 유사한 포인팅 장치는 사용자가 작은 컨트롤을 사용하기 어려울 수 있으며 더 
+    큰 컨트롤은 대상을 활성화 하는데 도움이 됩니다.
+  </p>
+  <p>
+    터치 기기의 경우에는 미세한 조작이 어렵고, 손가락이 화면의 위치를 가리기 때문에 
+    컨트롤이 충분한 크기를 가질 필요가 있습니다.
+  </p>
+  <a href="https://sri-fe1.notion.site/135561dd3c554800a976a2a4f2085fe4">
+    🔎 자세히 알아보기
+  </a>
+  
+</ObjectiveQuiz>

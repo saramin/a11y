@@ -1,31 +1,16 @@
 import { useState } from "react";
 
-export const VerifyButton = ({ checkExercise }) => {
-  const [feedback, setFeedback] = useState(null);
-  const success = "Well done!";
-  const onClick = () => {
-    const error = checkExercise();
-    setFeedback(error || success);
-  };
-  const renderButton = () => (
-    <button type="button" className="button" onClick={onClick}>
-      Verify
-    </button>
-  );
-  const renderFeedback = () => {
-    if (feedback) {
-      const isSuccess = feedback === success;
-      return (
-        <div className={isSuccess ? "success" : "error"} role="alert">
-          {feedback}
-        </div>
-      );
-    }
-  };
+export const VerifyButton = ({checkExercise, feedback}) => {
+  const cn = `verify-btn ${
+    feedback !== null ? `verify-btn--${feedback ? "success" : "fail"}` : ``
+  }`;
   return (
-    <div className="verify">
-      {renderButton()}
-      {renderFeedback()}
-    </div>
-  );
+    <button
+      type="button"
+      className={cn}
+      onClick={() => checkExercise()}
+    >
+      정답 확인
+    </button>
+  )
 };

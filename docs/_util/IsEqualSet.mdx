@@ -1,0 +1,4 @@
+export function isEqualSet (a, b) {
+  if (!a || !b) return;
+  return a.size === b.size && Array.from(a).every(value => (b.has(value) || b.has(String(value))));
+}

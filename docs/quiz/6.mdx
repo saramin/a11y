@@ -1,0 +1,85 @@
+---
+title: 사람인 웹 접근성 퀴즈
+sidebar_label: 6번 문제
+id: quiz-6
+slug: /quiz/6
+hide_table_of_contents: true
+---
+
+## Q6. 다음 중 저시력 장애 사용자에 대한 설명 중 틀린 것을 고르세요.
+
+import { ObjectiveQuiz } from "../_util/ObjectiveQuiz.mdx";
+import { Glossary } from "../_util/Glossary.mdx";
+import { Correct } from "../_util/Correct.mdx";
+
+<ObjectiveQuiz
+  column={2}
+  options={[
+    {
+      label: `화면을 확대해서 보기 때문에 화면 구성을 한 번에 알아차리기 힘들다.`,
+      value: 1,
+    },
+    {
+      label: `시야의 중심부는 보이지 않고 주변부만 보이는 시각을 가지는 경우가 있다.`,
+      value: 2,
+    },
+    {
+      label: `시야의 중심부만 보이고 주변부는 보이지 않는 시각을 가지는 경우가 있다.`,
+      value: 3,
+    },
+    {
+      label: `다크 테마는 저시력자에게 매우 좋은 대안이다.`,
+      value: 4,
+    },
+    {
+      label: `흰 색 바탕의 회색인 일반 크기의 글씨는 읽지 못할 수 있다.`,
+      value: 5,
+    }
+  ]}
+  answer={4}
+>
+  <Correct>
+    <p>
+      4. 다크 테마를 적용했다 하더라도 배경과 텍스트 사이, 컴포넌트와 컴포넌트 사이에
+      색상 대비가 충분하지 못하면 여전히 저시력 사용자는 인식이 어렵거나 인식하지 못하게
+      됩니다. <br/>
+      충분한 대비를 제공할 때에야 비로소 저시력자에게 좋은 대안이 될 수 있습니다.
+    </p>
+  </Correct>
+  <p>
+    저시력자의 경우 잔존 시력이 매우 낮은 경우가 많기 때문에 평균 400% 정도 확대하여
+    화면을 보기 때문에 실제로 한 번에 볼 수 있는 화면은 전체 화면의 1/16 정도에 불과합니다.
+  </p>
+  <div>
+    <p>시야 손실을 가지는 저시력자의 일부는 </p>
+    <div className="flex-column-3">
+      <FigureBox>
+        <img
+        src="https://mulder21c.github.io/low-vision-needs/images/cfl.png"
+        alt="" />
+        <figcaption>중앙 필드 손실</figcaption>
+      </FigureBox>
+      <FigureBox>
+        <img
+        src="https://mulder21c.github.io/low-vision-needs/images/pfl.png"
+        alt="" />
+        <figcaption>주변 필드 손실</figcaption>
+      </FigureBox>
+      <FigureBox>
+        <img
+        src="https://mulder21c.github.io/low-vision-needs/images/ofl.png"
+        alt="" />
+        <figcaption>산발적 필드 손실</figcaption>
+      </FigureBox>
+    </div>
+    <p>등의 시야 손실이 있습니다.</p>
+  </div>
+  <p>
+    회색 (#808080) 색상과 흰색 (#FFFFFF) 색상 사이에는 3.94:1의 명도 대비가 존재합니다.
+    <br />
+    일반 글꼴 크기에서 저시력 사용자는 최소 4.5:1, 가능한 7:1 이상의 명도 대비가 있어야
+    글씨를 읽을 수 있게 됩니다.  <br/>
+    따라서 흰 바탕에서의 회색인 일반 글꼴 크기의 텍스트는 저시력자가 읽지 못하고 넘어갈
+    확률이 매우 높습니다.
+  </p>
+</ObjectiveQuiz>

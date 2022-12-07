@@ -8,5 +8,8 @@
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[mdx]": {
+    "files.trimTrailingWhitespace": false
   }
 }

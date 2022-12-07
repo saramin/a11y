@@ -1,0 +1,60 @@
+import { useState } from "react";
+import { isEqualSet } from "./IsEqualSet.mdx";
+import { Checkbox } from "./Checkbox.mdx";
+import { VerifyButton } from "./VerifyButton.mdx";
+import { Feedback } from "./Feedback.mdx";
+import { Glossary } from "./Glossary.mdx";
+
+export const ObjectiveQuiz = ({options, answer, column = 2, children}) => {
+  children = children.length ? children : [children];
+  const [feedback, setFeedback] = useState(null);
+  const [checkedList, setCheckedList] = useState(new Set());  
+  const glossaries = [...children].filter(child => child?.props?.mdxType === 'Glossary');
+  children = [...children].filter(child => child?.props?.mdxType !== 'Glossary');
+  const handleCheckedList = ({value, checked}) => {
+    if (checked) checkedList.add(value)
+    else checkedList.delete(value)
+    setCheckedList(checkedList);
+  };
+  const checkExercise = () => {
+    if (checkedList.size === 0) {
+      alert(`답을 선택하세요`);
+      return;
+    }
+    const correct = new Set(Array.isArray(answer) ? answer : [String(answer)]);
+    setFeedback(isEqualSet(correct, checkedList));
+  };
+  return (
+    <>
+      <div className={`answer answer--column-${column}`}>
+        {options.map((option, index) => (
+          <Checkbox
+            key={index}
+            option={option}
+            setCheckedList={handleCheckedList}
+          />
+        ))}
+      </div>
+      {
+        glossaries.length 
+        ? (
+            <dl className={`glossary`}>
+              {glossaries.map(
+                (glossary, idx) => (
+                  <Glossary 
+                    key={idx}
+                    term={glossary.props.term}
+                    children={glossary.props.children}
+                  />)
+              )}
+            </dl>
+          )
+        : ""
+      }
+      <VerifyButton checkExercise={checkExercise} feedback={feedback}  />
+      <Feedback feedback={feedback} answer={answer}>
+        {children}
+      </Feedback>
+    </>
+  );
+};
