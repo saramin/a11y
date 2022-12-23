@@ -10,7 +10,7 @@ const config = {
   projectName: "a11y",
   deploymentBranch: "gh-pages",
   scripts: ["https://buttons.github.io/buttons.js"],
-  favicon: `${root}img/saramin.png`,
+  favicon: `${root}favicon.ico`,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
   trailingSlash: false,
@@ -57,7 +57,7 @@ const config = {
         },
       ],
     },
-    image: `${root}img/undraw_online.svg`,
+    image: `${root}img/logo-saramin.svg`,
     footer: {
       links: [],
       copyright: "Copyright © 2022 사람인",
@@ -68,6 +68,10 @@ const config = {
       },
     },
     tableOfContents: {},
+  },
+  i18n: {
+    defaultLocale: "ko",
+    locales: ["ko"],
   },
 };
 
