@@ -55,6 +55,11 @@ const config = {
           label: "사람인 웹 접근성 가이드",
           position: "left",
         },
+        {
+          to: "https://sri-fe1.notion.site/32d50962016c4c90a04c8447298434fc",
+          label: "업무별 체크리스트",
+          position: "left",
+        },
       ],
     },
     image: `${root}img/logo-saramin.svg`,
