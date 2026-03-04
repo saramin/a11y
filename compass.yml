@@ -1,0 +1,14 @@
+name: a11y
+id: ari:cloud:compass:fbd1859d-75f6-4abd-84f3-0050073f34ef:component/039537c6-f5ee-4079-8768-97bd5e53bb46/0270a1df-6923-4a34-90be-d127fbda0ea0
+description: 사람인 웹 접근성 교육 자료
+configVersion: 1
+typeId: SERVICE
+fields:
+  tier: 4
+links: []
+relationships:
+  DEPENDS_ON: []
+labels:
+  - language:css
+  - source:github
+customFields: null
